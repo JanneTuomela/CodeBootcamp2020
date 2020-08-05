@@ -11,8 +11,11 @@ namespace AspNetCoreBackend.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        [Route("luku")]
         public int Luku()
         { return 123; }
-
+        [Route("merkkijono")]
+        public string Merkkijono()
+        { return "ABCD"; }
     }
 }

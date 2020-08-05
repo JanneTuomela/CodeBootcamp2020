@@ -1,0 +1,13 @@
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.csprojAssemblyReference.cache
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.AssemblyInfoInputs.cache
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.AssemblyInfo.cs
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.csproj.CoreCompileInputs.cache
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\bin\Debug\netcoreapp3.1\Runkosarja.exe
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\bin\Debug\netcoreapp3.1\Runkosarja.deps.json
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\bin\Debug\netcoreapp3.1\Runkosarja.runtimeconfig.json
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\bin\Debug\netcoreapp3.1\Runkosarja.runtimeconfig.dev.json
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\bin\Debug\netcoreapp3.1\Runkosarja.dll
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\bin\Debug\netcoreapp3.1\Runkosarja.pdb
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.dll
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.pdb
+C:\Users\janne\OneDrive\Työpöytä\Code Bootcamp\Demo\Runkosarja\Runkosarja\obj\Debug\netcoreapp3.1\Runkosarja.genruntimeconfig.cache

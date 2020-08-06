@@ -63,13 +63,12 @@ namespace AspNetCoreBackend.Controllers
                     {
                         indeksi2 = random.Next(0, joukkueet.Length);
                         indeksiOk = indeksi != indeksi2;
-                        indeksi4 = random.Next(0, maalit.Length);
                     }
                     string vierasJoukkue = joukkueet[indeksi2];
                     string vierasMaalit = maalit[indeksi4];
 
                     string peli = kotiJoukkue + "-" + vierasJoukkue + " " + kotiMaalit + "-" + vierasMaalit;
-
+                    
                     if (!pelit.Contains(peli))
                     {
                         pelit.Add(peli);

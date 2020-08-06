@@ -32,6 +32,7 @@ namespace AspNetCoreBackend.Controllers
         {
             return new string[] { "ABCD", "DEFG" };
         }
+
         [Route("ottelut")]
         public List<string> Ottelut()
         {
@@ -43,6 +44,7 @@ namespace AspNetCoreBackend.Controllers
                 { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
             List<string> pelit = new List<string>();
+            List<string> tulokset = new List<string>();
             Random random = new Random();
 
             for (int laskuri = 0; laskuri < 210; laskuri++)
@@ -67,18 +69,21 @@ namespace AspNetCoreBackend.Controllers
                     string vierasJoukkue = joukkueet[indeksi2];
                     string vierasMaalit = maalit[indeksi4];
 
-                    string peli = kotiJoukkue + "-" + vierasJoukkue + " " + kotiMaalit + "-" + vierasMaalit;
-                    
+                    string peli = kotiJoukkue + "-" + vierasJoukkue;
+                    string lopputulos = kotiMaalit + "-" + vierasMaalit;
+
                     if (!pelit.Contains(peli))
                     {
                         pelit.Add(peli);
+                        tulokset.Add(lopputulos);
                         peliOk = true;
                     }
                 }
             }
 
             return pelit;
-        }
+
+        }   
 
     }
 

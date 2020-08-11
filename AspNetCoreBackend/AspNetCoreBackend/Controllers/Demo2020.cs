@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace AspNetCoreBackend.Controllers
 {
@@ -97,19 +98,33 @@ namespace AspNetCoreBackend.Controllers
             var Sarjataulukko = pistetilanne.ToList();
             Sarjataulukko.Sort((pair1, pair2) => pair2.Value.CompareTo(pair1.Value));
             Sarjataulukko.ToArray();
-            Lokiin("SARJATAULUKKO:\n");
-            
-            foreach (KeyValuePair<string, int> kvp in Sarjataulukko)
-            {
-                Lokiin("Joukkueen " + kvp.Key + " pistetilanne: " + kvp.Value);
-            }
 
+            Lokiin("SARJATAULUKKO:\n");
+
+            int sijoitus = 0;
+
+            foreach (KeyValuePair<string, int> kvp in Sarjataulukko)
+                
+            {
+                sijoitus++; 
+                Lokiin(sijoitus + ". " + kvp.Key + " loppupisteet " + kvp.Value);   
+            }
+            Lokiin("\n6 parasta jatkaa suoraan pudotuspeleihin,\n" +
+                   "sijat 7 ja 10 sekä 8 ja 9 pelaavat alkupudotuspelit,\n" +
+                   "sijat 11-15 jäävät pudotuspelien ulkopuolelle tällä kaudella.");
+            new Process
+            {
+                StartInfo = new ProcessStartInfo(@"C:\\users\\janne\\Sarjataulukko.txt")
+                {
+                    UseShellExecute = true
+                }
+            }.Start();
             /*
             foreach (string joukkue in joukkueet)
             {
                 Lokiin("SARJATAULUKKO\n" + "Joukkueen " + joukkue + " pistetilanne: " + Sarjataulukko);
             }*/
-            
+
             return pelit;
             
         }   

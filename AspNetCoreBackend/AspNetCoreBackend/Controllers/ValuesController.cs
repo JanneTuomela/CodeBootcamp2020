@@ -74,8 +74,8 @@ namespace AspNetCoreBackend.Controllers
 
                     if (!pelit.Contains(peli))
                     {
-                        pelit.Add(peli);
-                        tulokset.Add(lopputulos);
+                        pelit.Add(peli + " " + lopputulos);
+                        //tulokset.Add(lopputulos);
                         peliOk = true;
                     }
                 }

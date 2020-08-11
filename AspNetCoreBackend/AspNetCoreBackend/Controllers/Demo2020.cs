@@ -10,9 +10,9 @@ namespace AspNetCoreBackend.Controllers
 {
     [Route("Demo2020")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class Demo2020 : ControllerBase
     {
-        [Route("ottelut")]
+        [Route("Ottelut")]
         public List<string> Ottelut()
       
         {

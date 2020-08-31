@@ -15,7 +15,7 @@ namespace AspNetCoreBackend.Controllers
     {
         [Route("Ottelut")]
         public List<string> Ottelut()
-      
+
         {
             string[] joukkueet = new string[]
             {
@@ -25,7 +25,9 @@ namespace AspNetCoreBackend.Controllers
                 { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
             Dictionary<string, int> pistetilanne = new Dictionary<string, int>();
-            
+            Dictionary<string, int> kotiPelit = new Dictionary<string, int>();
+            Dictionary<string, int> vierasPelit = new Dictionary<string, int>();
+
             List<string> pelit = new List<string>();
             List<string> tulokset = new List<string>();
             Random random = new Random();
@@ -45,25 +47,45 @@ namespace AspNetCoreBackend.Controllers
                     int indeksi3 = random.Next(0, maalit.Length);
                     string kotiJoukkue = joukkueet[indeksi];
                     int kotiMaalit = maalit[indeksi3];
+                    
 
                     bool indeksiOk = false;
-                    int indeksi2 = random.Next(0,joukkueet.Length);
+                    int indeksi2 = random.Next(0, joukkueet.Length);
                     int indeksi4 = random.Next(0, maalit.Length);
                     while (!indeksiOk)
                     {
                         indeksi2 = random.Next(0, joukkueet.Length);
                         indeksiOk = indeksi != indeksi2;
+
                     }
                     string vierasJoukkue = joukkueet[indeksi2];
                     int vierasMaalit = maalit[indeksi4];
 
                     string peli = kotiJoukkue + "-" + vierasJoukkue;
                     string lopputulos = kotiMaalit + "-" + vierasMaalit;
-                  
-                    if (!pelit.Contains(peli))
+
+                    bool löytyy = false;
+
+
+
+                    foreach (string testi in pelit)
+                    {
+                        if (testi.StartsWith(peli))
+                        {
+                            // tällainen peli on jo pelattu
+                            löytyy = true;
+                            break;
+                        }
+                    }
+
+
+
+                    if (!löytyy)
+                    
+                    //if (!pelit.Contains(peli))
                     {
                         pelit.Add(peli + " " + lopputulos);
-                        //tulokset.Add(lopputulos);
+                        // tulokset.Add(lopputulos);
                         peliOk = true;
 
                         if (kotiMaalit > vierasMaalit)
@@ -84,9 +106,9 @@ namespace AspNetCoreBackend.Controllers
                         }
 
                     }
-                    
+
                 }
-                
+
             }
 
             static void Lokiin(string viesti)
@@ -94,24 +116,28 @@ namespace AspNetCoreBackend.Controllers
                 const string TiedostoNimi = "C:\\users\\janne\\Sarjataulukko.txt";
                 System.IO.File.AppendAllText(TiedostoNimi, viesti + "\r\n");
             }
+            
 
             var Sarjataulukko = pistetilanne.ToList();
             Sarjataulukko.Sort((pair1, pair2) => pair2.Value.CompareTo(pair1.Value));
             Sarjataulukko.ToArray();
 
             Lokiin("SARJATAULUKKO:\n");
+            
 
             int sijoitus = 0;
 
             foreach (KeyValuePair<string, int> kvp in Sarjataulukko)
-                
+
             {
-                sijoitus++; 
-                Lokiin(sijoitus + ". " + kvp.Key + " loppupisteet " + kvp.Value);   
+                sijoitus++;
+                Lokiin(sijoitus + ". " + kvp.Key + " loppupisteet " + kvp.Value);
             }
+
             Lokiin("\n6 parasta jatkaa suoraan pudotuspeleihin,\n" +
                    "sijat 7 ja 10 sekä 8 ja 9 pelaavat alkupudotuspelit,\n" +
-                   "sijat 11-15 jäävät pudotuspelien ulkopuolelle tällä kaudella.");
+                   "sijat 11-15 jäävät pudotuspelien ulkopuolelle tällä kaudella.\n");
+            
             new Process
             {
                 StartInfo = new ProcessStartInfo(@"C:\\users\\janne\\Sarjataulukko.txt")
@@ -126,8 +152,8 @@ namespace AspNetCoreBackend.Controllers
             }*/
 
             return pelit;
-            
-        }   
+
+        }
 
     }
 
